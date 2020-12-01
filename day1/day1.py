@@ -8,9 +8,8 @@ def find(result, numbers):
     while True:
         current_num = numbers.pop()
         looking_for = result - current_num
-        for n in numbers:
-            if n == looking_for:
-                return (looking_for, current_num)
+        if looking_for in numbers:
+            return (looking_for, current_num)
 
 x, y = find(2020, numbers)
 print(x*y)
