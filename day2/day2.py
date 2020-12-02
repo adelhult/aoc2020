@@ -14,11 +14,8 @@ for line in lines:
     if lower <= password.count(char) <= higher:
         acc1 += 1
 
-    fst = int(criteria[0])
-    snd = int(criteria[1][:-1])
-    char = criteria[1][-1]
-    p_fst = password[fst - 1] == char
-    p_snd = password[snd - 1] == char
+    p_fst = password[lower - 1] == char
+    p_snd = password[higher - 1] == char
 
     if p_fst and not p_snd or not p_fst and p_snd:
         acc2 += 1
