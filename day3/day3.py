@@ -1,14 +1,13 @@
 with open("input.txt", "r") as f:
-    m = [list(map(lambda i: i == "#", line.strip())) for line in f.readlines()]
+    m = [line.strip() for line in f.readlines()]
 
 def num_trees(m, xs, ys):
     max_x = len(m[0])
     x = 0
     trees = 0
-    for y in m[::ys]:
-        if y[xs * x % max_x]:
+    for x, y in enumerate(m[::ys]):
+        if y[xs * x % max_x] == "#":
             trees += 1
-        x += 1
 
     return trees
 
