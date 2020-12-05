@@ -11,8 +11,7 @@ with open("input.txt", "r") as f:
     all_ids = [parse(l.strip())[2] for l in f]
 
 # Part 1
-m = max([i for i in all_ids])
-print(m)
+print(max(all_ids))
 
 # Part 2
 for i in range(0,1024):
