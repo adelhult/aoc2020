@@ -14,10 +14,7 @@ for group in groups:
     people = group.split("\n")
     shared_answers = list(set(people[0].strip()))
     to_remove = []
-    if len(people) == 1:
-        acc2 += len(shared_answers)
-        continue
-    for person in people:
+    for person in people[1:]:
         for answer in shared_answers:
             if answer not in list(person):
                 to_remove.append(answer)  
