@@ -12,13 +12,10 @@ print("Part 1", acc)
 acc2 = 0
 for group in groups:
     people = group.split("\n")
-    shared_answers = list(set(people[0].strip()))
-    to_remove = []
+    shared_answers = set(people[0].strip())
     for person in people[1:]:
-        for answer in shared_answers:
-            if answer not in list(person):
-                to_remove.append(answer)  
-    count = len([a for a in shared_answers if a not in to_remove])          
-    acc2 += count
+        shared_answers = shared_answers.intersection(set(person))
+
+    acc2 += len(shared_answers)
     
 print("Part 2", acc2)
